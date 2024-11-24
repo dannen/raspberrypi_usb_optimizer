@@ -1,3 +1,4 @@
+
 # USB Optimization Script
 
 This script optimizes a USB drive's performance on Linux by applying several changes, including filesystem optimizations, I/O scheduler tuning, and persistent configurations. The script dynamically detects the connected USB drive and allows you to optimize it with minimal effort.
@@ -30,12 +31,11 @@ The following tests were conducted to measure the impact of each optimization on
 |-------------------------------------------------|---------------------|
 | **Initial (exFAT)**                             | 25.7               |
 | **ext4 (default)**                              | 56.4               |
-| **ext4 + noatime**                              | 56.6               |
-| **ext4 + noatime + data=writeback**             | 56.6               |
+| **ext4 (default) + noatime**                    | 56.6               |
 | **ext4 + noatime + data=writeback + mq-deadline** | 56.6               |
 | **ext4 + noatime + data=writeback + kyber**     | 57.8               |
 | **ext4 + noatime + data=writeback + none**      | 34.0               |
-
+|-------------------------------------------------|---------------------|
 
 
 For a visual representation, see the chart above.
@@ -59,22 +59,6 @@ For a visual representation, see the chart above.
 ```
 
 ### **ext4 + noatime**
-```bash
-# dd if=/dev/zero of=./testfile bs=1M count=1024 oflag=direct
-1024+0 records in
-1024+0 records out
-1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.963 s, 56.6 MB/s
-```
-
-### **ext4 + noatime + data=writeback**
-```bash
-# dd if=/dev/zero of=./testfile bs=1M count=1024 oflag=direct
-1024+0 records in
-1024+0 records out
-1073741824 bytes (1.1 GB, 1.0 GiB) copied, 18.963 s, 56.6 MB/s
-```
-
-### **ext4 + noatime + data=writeback + mq-deadline**
 ```bash
 # dd if=/dev/zero of=./testfile bs=1M count=1024 oflag=direct
 1024+0 records in
@@ -116,3 +100,4 @@ For a visual representation, see the chart above.
 
 - The script does **not** format the USB drive directly. It provides the command to do so if needed.
 - Ensure to back up your data before applying these optimizations, as some steps (e.g., reformatting) are destructive.
+- 
