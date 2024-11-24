@@ -35,7 +35,6 @@ The following tests were conducted to measure the impact of each optimization on
 | **ext4 + noatime + data=writeback + mq-deadline** | 56.6               |
 | **ext4 + noatime + data=writeback + kyber**     | 57.8               |
 | **ext4 + noatime + data=writeback + none**      | 34.0               |
-|-------------------------------------------------|---------------------|
 
 
 For a visual representation, see the chart above.
