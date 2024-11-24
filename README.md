@@ -99,4 +99,3 @@ For a visual representation, see the chart above.
 
 - The script does **not** format the USB drive directly. It provides the command to do so if needed.
 - Ensure to back up your data before applying these optimizations, as some steps (e.g., reformatting) are destructive.
-- 
